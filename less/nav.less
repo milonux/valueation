@@ -1,0 +1,108 @@
+.navbar {
+  &.navbar-base {
+    background-color: @brand-primary-lighten;
+    border: none;
+    min-height: 60px;
+    margin-bottom: 0;
+    .border-radius(0);
+
+    .navbar-brand {
+      height: 60px;
+      color: #fff;
+
+      img {
+        max-height: 30px;
+        width: auto;
+      }
+    }
+
+    .nav {
+      &.nav-base {
+        > li {
+          > a {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            text-transform: uppercase;
+
+            &.btn-get-started {
+              margin-top: 14px;
+              padding: 6px 15px;
+              background-color: @brand-primary;
+              border: 1px solid @brand-primary;
+              font-family: @accent-font;
+              font-weight: 400;
+              text-transform: capitalize;
+              font-size: 18px;
+              .border-radius(30px);
+
+              i {
+                margin-left: 10px;
+              }
+
+              &:hover {
+                background-color: @brand-primary-lighten;
+              }
+            }
+          }
+        }
+
+        li {
+
+          &.dropdown {
+            &.user-dropdown {
+              .dropdown-menu {
+                min-width: 200px;
+                border-top: none;
+                .border-radius(0 0 4px 4px);
+
+                li {
+                  a {
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    padding: 10px 20px;
+                  }
+                }
+              }
+            }
+          }
+
+          &.open {
+            a {
+              background-color: transparent;
+              &:hover, &:focus {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .navbar-toggle {
+      border-color: lighten(@brand-primary, 6.7%);
+
+      &:hover, &:active, &:focus {
+        background-color: lighten(@brand-primary, 6.7%);
+      }
+    }
+
+    .navbar-collapse {
+      border-color: darken(@brand-primary, 6.7%);
+    }
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .navbar {
+    &.navbar-base {
+      .container-fluid {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+    }
+  }
+}

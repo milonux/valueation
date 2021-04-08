@@ -1,0 +1,31 @@
+.table {
+	&.table-striped-inverse {
+		thead {
+			tr {
+				background-color: @brand-bg-lighter;;
+				th {
+					border-bottom-color: darken(@brand-bg-lighter, 13%);
+					/*border-top: 2px solid darken(@brand-bg-lighter, 13%) !important;*/
+					color: @brand-primary;
+					padding: 15px;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				&:nth-of-type(2n+1) {
+					background-color: transparent;
+				}
+				&:nth-of-type(2n+2) {
+					background-color: @brand-bg-xlighter;
+				}
+
+				td {
+					padding: 15px;
+					border-top-color: @border-color;
+				}
+			}
+		}
+	}
+}

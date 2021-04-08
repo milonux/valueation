@@ -1,0 +1,20 @@
+.footer {
+	padding: 15px 0;
+	border-top: 1px solid @border-color;
+	color: @gray-light;
+
+	.foo-nav {
+		@media @desktopOnly {
+			text-align: right;
+		}
+		a {
+			color: @gray-light;
+			display: inline-block;
+			margin-left: 10px;
+
+			&:hover {
+				color: @brand-primary;
+			}
+		}
+	}
+}

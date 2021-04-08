@@ -1,0 +1,46 @@
+.form-control {
+	box-shadow: none !important;
+	border-color: @border-color;
+	.border-radius(2px);
+
+	&:focus {
+		border-color: @brand-primary;
+		outline: none;
+	}
+
+
+
+
+
+	&.select-styled {
+		background-image: url('../images/select-arrow-down.png');
+		background-position: 95% 50%;
+		background-repeat: no-repeat;
+		background-size: 10px 6px;
+		padding-right: 32px;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+			 appearance: none;
+	}
+
+}
+
+.input-group {
+	.input-group-addon {
+		border-color: @border-color;
+	}
+}
+
+
+
+
+.irs-from, 
+.irs-to, 
+.irs-single {
+	background: @brand-primary;
+
+	&::after {
+		border-color: @brand-primary transparent transparent;
+	}
+}

@@ -1,0 +1,43 @@
+
+.btn {
+	font-family: @accent-font;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: none;
+	.border-radius(30px);
+	&.btn-afix {
+		min-width: 200px;
+	}
+
+	&.btn-primary {
+		background-color: @brand-primary;
+
+		&:hover, &:active, &:focus {
+			background-color: @brand-primary-lighten;
+		}
+	}
+
+	&.btn-gray {
+		background-color: #949494;
+		color: #fff;
+
+		&:hover, &:active, &:focus {
+			background-color: lighten(#949494, 10%)
+		}
+	}
+}
+
+
+
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: @brand-primary;
+  border-color: darken(@brand-primary, 5%);
+}

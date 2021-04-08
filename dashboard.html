@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="ico/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="ico/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="ico/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="ico/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="ico/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="ico/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="ico/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="ico/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="ico/manifest.json">
+    <link rel="mask-icon" href="ico/safari-pinned-tab.svg" color="#831d81">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ico/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Valuation</title>
+
+    <link href="plugins/pace/pace.css" rel="stylesheet">
+    <link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="plugins/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+
+
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="plugins/pace/pace.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-inverse navbar-base">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-base-collapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand text-uppercase" href="#">
+                        <img class="img-responsive" src="images/logo.png" alt="Valuation">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-base-collapse">
+                    <ul class="nav navbar-nav nav-base navbar-right">
+                        <li><a href="#">Contact Us</a></li>
+                        <li class="dropdown user-dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jone Deo <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="breadbar dash-breadbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-8">
+                        <div class="view-companies">
+                            <h5 class="vc-title pull-left">View Companies</h5>
+                            <select class="form-control select-styled">
+                                <option selected="selected">Bluscheme</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section main-container">
+
+        <div class="section-history-value">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="padel-box">
+                            <h3>Bluescheme</h3>
+                            <address>
+                                101 Thomson Road<br>United Square<br>Singapore, 307591
+                            </address>
+                            <hr>
+                            <span>Latest Estimated Value as of today</span>
+                            <h2 class="estimated-value">$330,982</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="value-history">
+                            <h4 class="text-center title">Valuation History</h4>
+                            <canvas class="value-chart" id="valueChart" width="400" height="260"></canvas>
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <button class="btn btn-primary btn-block mt-30">Generate New Valuation Report <i class="ion-android-settings"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-business-information">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="dash-heading text-center">Business Information</h3>
+                    </div>
+                    <div class="col-sm-4 mt-20">
+                        <div class="panel panel-default panel-bs-info">
+                            <div class="panel-heading">
+                                <h5 class="clearfix panel-title"><span>Location</span> <i class="ion-ios-location pull-right"></i></h5>
+                            </div>
+                            <div class="panel-body">
+                                <div class="gol-map">
+                                    <img class="img-responsive" src="images/map.jpg" alt="map">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mt-20">
+                        <div id="companyInfo" class="panel panel-default panel-bs-info">
+                            <div class="panel-heading">
+                                <h5 class="clearfix panel-title"><span>Company Info</span> <button class="btn btn-primary btn-sm btn-edit pull-right"> <span class="up-text">Edit</span> <i class="ion-edit"></i></button></h5>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Industry</td>
+                                                <td>
+                                                    <span class="field-edit-value">6209, Other Information Technology and computer service Activities</span>
+                                                    <input type="text" class="form-control field-edit hide" value="6209, Other Information Technology and computer service Activities">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ownership Type</td>
+                                                <td>
+                                                    <span class="field-edit-value">Company</span>
+                                                    <select class="form-control select-styled field-edit hide">
+                                                        <option selected="selected">Compay</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tax Form</td>
+                                                <td>
+                                                    <span class="field-edit-value"></span>
+                                                    <select class="form-control select-styled field-edit hide">
+                                                        <option selected="selected"></option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number of Employees</td>
+                                                <td>
+                                                    <span class="field-edit-value"></span>
+                                                    <input type="text" class="form-control field-edit hide" value="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Year of Inception</td>
+                                                <td>
+                                                    <span class="field-edit-value"></span>
+                                                    <input type="text" class="form-control field-edit hide" value="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mt-20">
+                        <div id="contactInfo" class="panel panel-default panel-bs-info">
+                            <div class="panel-heading">
+                                <h5 class="clearfix panel-title"><span>Contact Info</span> <button class="btn btn-primary btn-sm btn-edit pull-right"> <span class="up-text">Edit</span> <i class="ion-edit"></i></button></h5>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>First Name</td>
+                                                <td>
+                                                    <span class="field-edit-value">Jone</span>
+                                                    <input type="text" class="form-control field-edit hide" value="Jone">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Last Name</td>
+                                                <td>
+                                                    <span class="field-edit-value">Deo</span>
+                                                    <input type="text" class="form-control field-edit hide" value="Doe">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-Mail</td>
+                                                <td>
+                                                    <span class="field-edit-value">deosample@mail.com</span>
+                                                    <input type="text" class="form-control field-edit hide" value="deosample@mail.com">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phone Number</td>
+                                                <td>
+                                                    <span class="field-edit-value">25100010</span>
+                                                    <input type="text" class="form-control field-edit hide" value="25100010">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-key-performance">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="dash-heading text-center">Key Performance Indicators</h3>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar has-value">
+                                <span class="key-counter">-200%</span>
+                                <span class="key-meta">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Return on Equity(RDE)</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar has-value">
+                                <span class="key-counter">-100%</span>
+                                <span class="key-meta">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Debt to Equity</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar">
+                                <span class="key-counter">NA</span>
+                                <span class="key-meta hide">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Cash to Debt</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar has-value">
+                                <span class="key-counter">300%</span>
+                                <span class="key-meta">
+                                    <i class="ion-arrow-up-c"></i> 
+                                    Above Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Income to Revenue</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar">
+                                <span class="key-counter">NA</span>
+                                <span class="key-meta hide">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Inventory Tumover</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar">
+                                <span class="key-counter">NA</span>
+                                <span class="key-meta hide">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Interest Coverage</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar">
+                                <span class="key-counter">NA</span>
+                                <span class="key-meta hide">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Fixed Assets Tumover</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 mt-20">
+                        <div class="keyper-case text-center">
+                            <div class="key-counter-bar">
+                                <span class="key-counter">NA</span>
+                                <span class="key-meta hide">
+                                    <i class="ion-arrow-down-c"></i> 
+                                    Below Industry Average</span>
+                            </div>
+                            <div class="keypar-case-title">Day's Sales Outstanding</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-financial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="dash-heading text-center">Financials</h3>
+                    </div>
+                </div>
+
+                <div class="financial-tab-holder">
+                    <ul class="nav nav-pills nav-justified financial-tab" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#year_current" aria-controls="year_current" role="tab" data-toggle="tab">2015</a></li>
+                        <li role="presentation">
+                            <a href="#year_current_step_1" aria-controls="year_current_step_1" role="tab" data-toggle="tab">2014</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#year_current_step_2" aria-controls="year_current_step_2" role="tab" data-toggle="tab">2013</a>
+                        </li>
+                    </ul>
+
+                    <div class="financial-tab-content-holder">
+                        <div class="tab-content financial-tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="year_current">
+                                <div class="tab-content-in">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Income <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Revenue
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Pre-tax Income
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Owner/Director's Remunetation
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Interest Expense
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Non-Cash Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 One-Time Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                One-Time Revenues
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Assets <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Cash
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="200,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Receivable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Inventory
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="5,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="30,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Fixed Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="2,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Intangible Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="9,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Liabilities <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Payable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Bank Loans
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Long-Term Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Contingent Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Growth</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Projected Revenue Growth</div>
+                                                    <span class="full-mean">Annualized Growth Rate</span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Long Term EBITDA Margin</div>
+                                                    <span class="full-mean">
+                                                        EBITDA = Earnings Before Interest Taxes Depreciation & Amortization
+                                                    </span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="40" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Recurring</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="0" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Operations</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Sales form top three customers</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Conducted Online</div>
+
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Impact on profits and Revenues if Owner </div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="year_current_step_1">
+                                <div class="tab-content-in">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Income <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Revenue
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Pre-tax Income
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Owner/Director's Remunetation
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Interest Expense
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Non-Cash Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 One-Time Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                One-Time Revenues
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Assets <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Cash
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="200,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Receivable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Inventory
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="5,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="30,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Fixed Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="2,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Intangible Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="9,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Liabilities <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Payable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Bank Loans
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Long-Term Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Contingent Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Growth</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Projected Revenue Growth</div>
+                                                    <span class="full-mean">Annualized Growth Rate</span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Long Term EBITDA Margin</div>
+                                                    <span class="full-mean">
+                                                        EBITDA = Earnings Before Interest Taxes Depreciation & Amortization
+                                                    </span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="40" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Recurring</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="0" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Operations</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Sales form top three customers</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Conducted Online</div>
+
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Impact on profits and Revenues if Owner </div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="year_current_step_2">
+                                <div class="tab-content-in">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Income <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Revenue
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Pre-tax Income
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Owner/Director's Remunetation
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Interest Expense
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Non-Cash Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 One-Time Expenses
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                One-Time Revenues
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Assets <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Cash
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="200,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Receivable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Inventory
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="5,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="30,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Fixed Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="2,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Intangible Assets
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="9,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="finan-year-case">
+                                                <h4 class="finan-year-case-title">Liabilities <small>2015</small></h4>
+                                                <div class="finan-panel">
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Accounts Payable
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Current Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="100,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Bank Loans
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="10,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                Other Long-Term Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group-bar">
+                                                        <div class="col-sm-6">
+                                                            <span class="minimal-title">
+                                                                <i title="" data-placement="top" data-toggle="tooltip" class="ion-ios-information" data-original-title="The amount of money your business receives for selling a good or service"></i> 
+                                                                 Contingent Liabilities
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <span class="input-group-addon">$</span>
+                                                                <input type="text" aria-describedby="val_1" value="50,000" class="form-control number-only" autocomplete="off">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Growth</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Projected Revenue Growth</div>
+                                                    <span class="full-mean">Annualized Growth Rate</span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Long Term EBITDA Margin</div>
+                                                    <span class="full-mean">
+                                                        EBITDA = Earnings Before Interest Taxes Depreciation & Amortization
+                                                    </span>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="40" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Recurring</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="0" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 mt-30">
+                                            <div class="finan-year-case-equality">
+                                                <div class="case-quality-header">
+                                                    <h4 class="finan-year-case-title">Operations</h4>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Sales form top three customers</div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Percent of Business Conducted Online</div>
+
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="range-group">
+                                                    <div class="range-title">Impact on profits and Revenues if Owner </div>
+                                                    <div class="mt-15">
+                                                        <input type="text" class="value-range" data-min="0" data-from="100" name="" value="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="section-valuation-report">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="dash-heading text-center">Valuation Reports</h3>
+                    </div>
+                </div>
+
+                <table class="table table-striped table-value">
+                    <thead>
+                        <th>
+                            <span>Below is a list of generated reports for this company.</span>
+                        </th>
+                        <th>
+                            <button class="btn btn-primary">Generate New Valuation Report <i class="ion-android-settings"></i></button>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>Monday, 21 December 2015 2:19 pm</span>
+                            </td>
+                            <td><button class="btn btn-success">Download <i class="ion-ios-cloud-download-outline"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Monday, 21 December 2015 2:19 pm</span>
+                            </td>
+                            <td><button class="btn btn-success">Download <i class="ion-ios-cloud-download-outline"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="cell-info">
+                        Phone : 000 000 0000 | Fax : 555 000 524
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="copy-info text-center">
+                        &copy; Valuation, Inc. 2016. All Rights Reserved.
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="foo-nav text-right">
+                        <a href="">Terms of Use</a>
+                        <a href="">Privacy</a>
+                        <a href="">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugins/jstepper/jquery.jstepper.min.js"></script>
+    <script src="plugins/chartjs/Chart.min.js"></script>
+    <script src="plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+    <script>
+
+    $('#companyInfo').on('click', '.btn-edit', function() {
+        //$('.up-text').text("Edit" ? "Update" : "Edit");
+        $(this).children('.up-text').text(function(i, v){
+           return v === 'Edit' ? 'Update' : 'Edit'
+        })
+        $('#companyInfo .field-edit').toggleClass('hide');
+        $('#companyInfo .field-edit-value').toggleClass('hide');
+    });
+
+    $('#contactInfo').on('click', '.btn-edit', function() {
+        //$('.up-text').text("Edit" ? "Update" : "Edit");
+        $(this).children('.up-text').text(function(i, v){
+           return v === 'Edit' ? 'Update' : 'Edit'
+        })
+        $('#contactInfo .field-edit').toggleClass('hide');
+        $('#contactInfo .field-edit-value').toggleClass('hide');
+    });
+
+    
+
+    // CHART JS
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var lineChartData = {
+        labels : ["7. Dec","14. Dec","21. Dec","28. Dec","4. Jan","11. Jan"],
+        datasets : [
+            {
+                label: "My First dataset",
+                fillColor : "rgba(220,220,220,0.2)",
+                strokeColor : "rgba(220,220,220,1)",
+                pointColor : "rgba(220,220,220,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(220,220,220,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },
+            {
+                label: "My Second dataset",
+                fillColor : "rgba(151,187,205,0.2)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(151,187,205,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            }
+        ]
+
+    }
+
+    window.onload = function(){
+        var ctx = document.getElementById("valueChart").getContext("2d");
+        window.myLine = new Chart(ctx).Line(lineChartData, {
+            responsive: true
+        });
+    }
+
+
+    $('.number-only').jStepper({
+        //decimalSeparator: "."
+    });
+
+    $(".value-range").ionRangeSlider({});
+
+
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+    <script type="text/javascript">
+    $(document).on('change keyup blur paste', '.number-only', function() {
+        $('.number-only').each(function() {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function(now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    })
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
